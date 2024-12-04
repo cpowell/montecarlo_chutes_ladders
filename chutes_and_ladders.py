@@ -93,7 +93,7 @@ if __name__ == "__main__":
 
     start = timer()
     if do_parallel:
-        parallel_results = Parallel(n_jobs=8)(delayed(
+        parallel_results = Parallel(n_jobs=32)(delayed(
             simulate_a_game)() for _ in range(trials)  # <-- this is what will be parallelized
                                               )
         # Joblib doco shows how to deal with functions that return multiple values like perform_trial() does.
